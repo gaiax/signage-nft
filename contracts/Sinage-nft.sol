@@ -3,6 +3,7 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "base64-sol/base64.sol";
 
 // import "hardhat/console.sol";
 
@@ -28,5 +29,23 @@ contract Sinage_nft is ERC721{
       name: _name,
       description: _description
     });
+  }
+
+  function tokenURI(uint256 _id) public view override(ERC721) returns (string memory) {
+    return string(
+      abi.encodePacked(
+        "data:application/json;base64,",
+        Base64.encode(
+          bytes(
+            abi.encodePacked(
+            "{\"name\":\"", sinages[_id].name,
+            "\",\"image\":\"", sinages[_id].image,
+            "\",\"description\":\"", sinages[_id].description,
+            "\"}"
+            )
+          )
+        )
+      )
+    );
   }
 }
