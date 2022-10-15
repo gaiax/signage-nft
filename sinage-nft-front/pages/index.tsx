@@ -19,8 +19,8 @@ const Home: NextPage = () => {
         <div>
           <Box >
             <Grid container spacing={2}>
-              <Grid item xs={6} sx={{ width: 1 }} justifyContent="center" alignItems="center"><MediaCard /></Grid>
-              <Grid item xs={6} sx={{ width: 1 }} justifyContent="center" alignItems="center"><MediaCard /></Grid>
+              <Grid item xs={6} sx={{ width: 1 }} justifyContent="center" alignItems="center"><MediaCard nft={{name:"a", description:"desc", image:"/images/wall1.jpg"}}/></Grid>
+              <Grid item xs={6} sx={{ width: 1 }} justifyContent="center" alignItems="center"><MediaCard nft={{name:"b", description:"desc", image:"/images/wall2.jpg"}}/></Grid>
             </Grid>
           </Box>
         </div>

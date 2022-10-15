@@ -6,21 +6,29 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export default function MediaCard() {
+interface NFT{
+  nft: {
+      name: string
+      description: string
+      image: string
+  }
+}
+
+export default function MediaCard(nft:NFT) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"
-        image="/images/wall1.jpg"
+        image={nft.nft.image}
         alt="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          a さん
+          {nft.nft.name} さん
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          a さんのサイネージの枠を購入する
+          {nft.nft.name} さんのサイネージの枠を購入する
         </Typography>
       </CardContent>
       <CardActions>
