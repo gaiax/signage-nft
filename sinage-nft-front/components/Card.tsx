@@ -36,7 +36,7 @@ const onClick = async () => {
   
   console.log(await signer.getAddress());
   const nftContract = new ethers.Contract(
-    "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+    "0x95f1f1D9B73E51772b61aC612Fefc5d908Af8b8A",
     NFT.abi,
     signer
   )
