@@ -3,15 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import MediaCard from '../components/Card'
-import { CardMedia } from '@mui/material'
-// import * as React from 'react'
-
-// import Card from '@mui/material/Card';
-// import CardActions from '@mui/material/CardActions';
-// import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
+import { Grid, Box } from '@mui/material'
 
 const Home: NextPage = () => {
   return (
@@ -24,7 +16,14 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1>buy Sinage-adversise</h1>
-        <MediaCard></MediaCard>
+        <div>
+          <Box >
+            <Grid container spacing={2}>
+              <Grid item xs={6} sx={{ width: 1 }} justifyContent="center" alignItems="center"><MediaCard /></Grid>
+              <Grid item xs={6} sx={{ width: 1 }} justifyContent="center" alignItems="center"><MediaCard /></Grid>
+            </Grid>
+          </Box>
+        </div>
       </main>
 
       <footer className={styles.footer}>
