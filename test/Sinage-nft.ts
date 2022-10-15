@@ -18,6 +18,7 @@ describe("Sinage_nft Basic test", function () {
     const b64result0 = ret0.replace("data:application/json;base64,", "");
     const strResult0 = Buffer.from(b64result0, "base64").toString();
     const jsonResult0 = JSON.parse(strResult0);
+    console.log(jsonResult0)
     expect(jsonResult0.name).to.equal("name");
     expect(jsonResult0.image).to.equal("https://www.google.com/image.png");
     expect(jsonResult0.description).to.equal("description");

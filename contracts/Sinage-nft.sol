@@ -4,8 +4,7 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "base64-sol/base64.sol";
-
-// import "hardhat/console.sol";
+import "hardhat/console.sol";
 
 contract Sinage_nft is ERC721{
   using Counters for Counters.Counter;
@@ -29,6 +28,7 @@ contract Sinage_nft is ERC721{
       name: _name,
       description: _description
     });
+    _tokenId.increment();
   }
 
   function tokenURI(uint256 _id) public view override(ERC721) returns (string memory) {
